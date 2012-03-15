@@ -1,0 +1,4 @@
+<br/><br/><b>Click on the below links to get the students under that course</b><br/><br/>
+<% @c.each do |course| %>
+<%= link_to course.course_name, :controller=>'courses', :action=>'find', :id=>course.course_name %><br/>
+<%end%>

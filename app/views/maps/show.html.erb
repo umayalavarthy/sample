@@ -1,0 +1,11 @@
+
+ <%#= @map.to_html %>
+
+
+<div id="mapscs">
+   
+ <%= yield :head %>
+
+<%= gmaps4rails(@json) %> 
+
+<%= yield :scripts %> </div>

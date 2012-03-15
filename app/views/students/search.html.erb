@@ -1,0 +1,9 @@
+<h3>Searching for a student...</h3>
+  <br/><br/><br/>
+
+
+<center><%= form_tag :controller => 'students', :action => 'searching', :method => 'get' do %>
+      <%= text_field_tag :name, params[:name], :id => 'name' %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %><br/><br/>
+<a href="index">Back</a></center>

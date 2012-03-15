@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  student_id: MyString
+  standard: 1
+  rank: 1
+  conduct: MyString
+
+two:
+  student_id: MyString
+  standard: 1
+  rank: 1
+  conduct: MyString

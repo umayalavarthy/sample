@@ -1,0 +1,26 @@
+#main{
+      background: none repeat scroll 0 0 silver;
+    margin: auto;
+    width: 1000px;
+   
+    padding: 15px;
+}
+.flash{
+     color: white;
+}
+a{
+    color :whitesmoke
+      
+}
+
+#flash_alert{
+    color: white;
+}
+
+#mapscs{
+    height: 600px;
+    width: 800px;
+    padding: 15px;
+    left: 30px;
+
+}

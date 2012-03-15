@@ -1,0 +1,53 @@
+<%= form_for @admission, :html => {:multipart => true} do |f| %>
+ 
+    <% if @admission.errors.any? %>
+      <%= pluralize(@admission.errors.count, "error") %>
+        prohibited this user from being saved:
+    <p>There were problems with the following fields:
+    </p>
+    <ul>
+    <% @admission.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+    <% end %>
+
+    
+    <%= f.label :Name %>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+    <%= f.text_field :name %>
+    <br/>
+  <br/>
+
+
+    <%= f.label :ParentName %>*&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+    <%= f.text_field :parentname %>
+ 
+    <br/> <br/>
+    <%= f.label :DateOfBirth %>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+    <%#= f.year_select :dob, :start_year => 1985, :end_year => 2011 %>
+    <%#= select_month :dob(Date.today, :start_month => 'January', :end_month => 'December') %>
+    <%#= f.select_day :dob(Date.today, :start_day => 1, :end_day => 31) %>
+    <%= f.date_select :dob %>
+     <br/> <br/>
+
+     <%= f.label :Email %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+    <%= f.email_field :email %>
+<br/> <br/>
+
+    <%= f.label :Address %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+    <%= f.text_area :address, :size=>'25x3' %>
+    <br/> <br/>
+
+
+    <%= f.label :PhoneNunber %>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+    <%= f.text_field :phno %>
+
+    <br/> <br/>
+    <%= f.label :Feepaid %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
+     <%= f.select :feepaid, options_for_select(:Yes=>'true',:No=>'false') %>
+    <%#= f.check_box :feepaid %>
+ 
+    <br/> <br/> <br/>
+    <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,39 @@
+<%= form_for (@student) do |st| %>
+
+<%= st.label :name %>*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+<%= st.text_field :name %>
+    <br/><br/>
+    
+<%= st.label :studentid %>*&nbsp;&nbsp;:
+<%= st.text_field :student_id %>
+    <br/><br/>
+
+<%= st.label :standard %>*&nbsp;&nbsp;&nbsp;:
+<%=  st.select(:standard, options_for_select([[1, 1], [2, 2],[3, 3],[4, 4],[5, 5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12]])) %>
+
+    <br/><br/>
+
+
+    <%= st.label :avatar %>&nbsp;&nbsp;&nbsp;:
+    <%= st.file_field :avatar %>
+
+    <br/><br/>
+
+<%= st.label :course %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+<%= st.select(:course, options_for_select([['MPC','MPC'],['BiPC','BiPC'],['MEC','MEC'],['CEC','CEC'],['Others','Others']])) %>
+
+
+  <br/><br/>
+
+<%= st.label :rank %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+<%= st.text_field :rank %>
+    <br/><br/>
+
+<%= st.label :conduct %>*&nbsp;&nbsp;&nbsp;&nbsp;:
+<%= st.text_field :conduct %>
+    <br/><br/>
+
+<br/> <br/> <br/>
+    <%= st.submit %>
+
+<% end %>

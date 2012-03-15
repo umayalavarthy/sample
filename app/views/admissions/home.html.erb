@@ -1,0 +1,39 @@
+<center><h3>Listing Applicants</h3>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Parent Name</th>
+    <th>Date of Birth</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Contact Number</th>
+    <th>Fee Paid(y/n)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+
+  </tr>
+ <tr>
+<% @admissions.each do |admission| %>
+
+    <td><%= admission.name %></td>
+    <td><%= admission.parentname %></td>
+    <td><%= admission.dob %></td>
+    <td><%= admission.email %></td>
+    <td><%= admission.address %></td>
+    <td><%= admission.phno %></td>
+    <td><%= admission.feepaid %></td>
+
+    <td><%= link_to 'Show', admission %></td>
+    <td><%= link_to 'Edit', edit_admission_path(admission) %></td>
+    <td><%= link_to 'Delete', admission, :confirm => 'Are you sure?', :method => :delete %></td>
+
+  </tr>
+<% end %>
+</table>
+  <%#= link_to 'Next', :controller=>'admissions', :action=>'home' %><br/><br/>
+  <%=  link_to 'New Application', :controller=>"admissions", :action=>'new' %><br/><br/>
+
+<%= link_to 'Back', :controller=>'admissions', :action=>'index' %><br/></center>
+<center>

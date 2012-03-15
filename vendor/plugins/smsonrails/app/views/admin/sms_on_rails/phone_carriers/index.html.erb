@@ -1,0 +1,24 @@
+<h1>SMS Phone Carriers</h1>
+
+<table>
+  <tr>
+    <th class="short">Id</th>
+    <th class="long">Name</th>
+    <th class="long">Email domain</th>
+    <th>Options</th>
+  </tr>
+
+  <% staggered_table_rows(@phone_carriers) do |phone_carrier| %>
+    <td><%=h phone_carrier.id   %></td>
+    <td><%=h phone_carrier.name %></td>
+    <td><%=h phone_carrier.email_domain %></td>
+    <td><%=h phone_carrier.options %></td>
+    <td><%= link_to 'Show', sms_phone_carrier_path(phone_carrier) %></td>
+    <td><%= link_to 'Edit', edit_sms_phone_carrier_path(phone_carrier) %></td>
+    <td><%= link_to 'Destroy', sms_phone_carrier_path(phone_carrier), :confirm => 'Are you sure?', :method => :delete %></td>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New phone carrier', new_sms_phone_carrier_path %>

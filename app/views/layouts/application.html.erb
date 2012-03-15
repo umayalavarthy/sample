@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src='http://www.google.com/jsapi'></script>  
+  <title>Sample</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+
+  <%= csrf_meta_tag %>
+<p class="flash">
+
+<% if teacher_signed_in? %>
+    Signed in as <%= current_teacher.email %>. Not you?
+    <%= link_to "Sign out", destroy_teacher_session_path, :method => :delete %>
+  <% else %>
+    <%#= link_to "Sign up", new_teacher_registration_path %>  <%#= link_to "sign in", new_teacher_session_path %>
+  <% end %>
+   </p>
+      </div>
+      <p>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </p>
+      <% end %>
+
+</head>
+<body>
+  
+
+  <div id="main">
+    <center>
+<%= image_tag("school.jpg", :size=>'600x200')%><br/>
+      <%=  link_to 'Home Page', :controller=>"admissions", :action=>'index' %>&nbsp;&nbsp;
+ <%=  link_to 'Calendar', :controller=>'calendars', :action=>'index' %>&nbsp;&nbsp;
+ <%=  link_to 'Show Applicants', :controller=>'admissions', :action=>'home' %>&nbsp;&nbsp;
+ <%=  link_to 'Show Students', :controller=>"students", :action=>'index' %>&nbsp;&nbsp;
+ <%=  link_to 'Google Maps', :controller=>'maps', :action=>'show' %>&nbsp;&nbsp;
+ <%=  link_to 'Charts', :controller=>'charts', :action=>'index' %>&nbsp;&nbsp;
+ <%=  link_to 'Contact Us', :controller=>'admissions', :action=>'contactus' %>&nbsp;&nbsp;
+ <%=  link_to 'Courses', :controller=>'courses', :action=>'index' %><br/>
+ 
+</center>
+<%= yield %>
+  </div>
+
+</body>
+</html>

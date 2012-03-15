@@ -1,0 +1,18 @@
+<%#= will_paginate @student %>
+
+
+<center><%if (@max.length==0)%>
+<p><br/><br/><h3>There are no student matching to your entered text..<br/> Enter the student name correctly..</h3></p>
+</center><%else%>
+<p align="left"/p><b>Searched Results...</b>
+<% @max.each do |w| %>
+<p align="left"/p> <br/><strong>
+          <b>student name:</b>&nbsp;&nbsp;<%= w.name%></strong><br/>
+          <b>student id:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= w.student_id%><br/>
+          <b>standard:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<%= w.standard%> class<br/>
+          <b>Rank:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= w.rank%>rank<br/>
+          <b>Conduct:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=  w.conduct%> <br/></p>
+       
+<%end%>
+<%end%>
+<center><a href="search">Back</a></center>

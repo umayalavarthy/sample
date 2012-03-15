@@ -1,0 +1,38 @@
+</br>
+
+<%= image_tag @student.avatar.url %>
+
+<p>
+  <b>Student Name:</b>
+  <%= @student.name %>
+</p>
+
+<p>
+  <b>Student_id:</b>
+  <%= @student.student_id %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @student.course %>
+</p>
+
+
+
+<p>
+  <b>Standard:</b>
+  <%= @student.standard %> Class
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%= @student.rank %>
+</p>
+
+<p>
+  <b>Conduct:</b>
+  <%= @student.conduct %>
+</p>
+
+
+<%= link_to 'Back', students_path %>

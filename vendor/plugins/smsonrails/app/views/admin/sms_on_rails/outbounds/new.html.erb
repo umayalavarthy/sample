@@ -1,0 +1,54 @@
+<h1>New outbound</h1>
+
+<% form_for(:outbound, @outbound, :url => sms_draft_outbounds_path(@outbound.draft)) do |f| %>
+  <%= f.error_messages %>
+  <% @outbound.phone_number ||= SmsOnRails::PhoneNumber.new-%>
+  <% f.fields_for :phone_number do |phone_form| %>
+    <p>
+      <%= f.label :phone_number %><br />
+      <%= phone_form.text_field :number%>
+    </p>
+      <%=  render :partial => '/sms_on_rails/phone_carrier_form_item', :locals => {:phone_form => phone_form } %>
+  <% end %>
+  <p>
+    <%= f.label :status %><br />
+    <%= sms_on_rails_status_select(f) %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </p>
+  <p>
+    <%= f.label :processed_on %><br />
+    <%= f.datetime_select :processed_on %>
+  </p>
+  <p>
+    <%= f.label :sms_service_provider_id, 'Sms Service Provider' %><br />
+    <%= service_providers_collection_select(f) %>
+  </p>
+  <p>
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+  <p>
+    <%= f.label :retry_count %><br />
+    <%= f.text_field :retry_count %>
+  </p>
+  <p>
+    <%= f.label :sub_status %><br />
+    <%= f.text_field :sub_status %>
+  </p>
+  <p>
+    <%= f.label :options %><br />
+    <%= f.text_field :options %>
+  </p>
+  <p>
+    <%= f.label :send_priority %><br />
+    <%= f.text_field :send_priority %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', sms_draft_outbounds_path(@outbound.draft) %>

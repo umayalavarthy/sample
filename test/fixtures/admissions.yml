@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  parentname: MyString
+  dob: 2012-01-19
+  address: MyText
+  phno: MyString
+  feepaid: false
+
+two:
+  name: MyString
+  parentname: MyString
+  dob: 2012-01-19
+  address: MyText
+  phno: MyString
+  feepaid: false

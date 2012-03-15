@@ -1,0 +1,3 @@
+<% @st.each do |course| %>
+<%= link_to course.name, :controller=>'students', :action=>'find', :id=>course.name %><br/>
+<%end%>

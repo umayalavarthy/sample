@@ -1,0 +1,31 @@
+Description:
+    Setup Sms On Rails
+
+    The following actions can be specified seperately or together
+
+    environment (default)
+      - add the configuration to config/environment.rb and runs dependencies
+    models
+      - copy the vanilla models up to app/models/sms_on_rails so they can be
+        edited/overwritten accordingly
+    dependencies
+      - install dependent plugins and gems (enviroment does this automatically)
+    migration (default)
+      - creates three migration templates for sms tables. To skip one, for example if
+        only the carriers and phone numbers are desired,
+        use --skip-models, --skip-phone-number or --skip-carriers to skip
+
+Example:
+  Set up the environment and create models in app/models/sms_on_rails
+    ./script/generate sms_on_rails setup environment models
+
+  Just setup the environment and create the migration
+    ./script/generate sms_on_rails setup
+
+  Setup the views
+    ./script/generate sms_on_rails setup views
+
+  Create a migration skipping models migration
+    ./script/generate sms_on_rails setup migration --skip-models
+
+

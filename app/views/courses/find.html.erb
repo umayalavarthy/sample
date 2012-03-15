@@ -1,0 +1,7 @@
+<%if (@courses.length==0)%>
+<b><br/><br/>There are no student under this course..<br/></b>
+<%else%>
+<br/><br/><b>Click on the student to get the full info..<br/></b>
+<br/><% @courses.each do |course| %>
+<%= link_to course.name, :controller=>'students', :action=>'show', :id=>course.id %>
+<br/><br/><%end%><%end%>

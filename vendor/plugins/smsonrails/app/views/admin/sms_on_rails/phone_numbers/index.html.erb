@@ -1,0 +1,28 @@
+<h1>Phone Numbers</h1>
+
+<table>
+  <tr>
+    <th class="short">Id</th>
+    <th class="long">Number</th>
+    <th>Carrier</th>
+    <th>Country code</th>
+    <th>Do Not Send</th>
+    <th>White List</th>
+  </tr>
+
+<% staggered_table_rows(@phone_numbers) do |phone_number| %>
+    <td><%=h phone_number.id      %></td>
+    <td><%=h phone_number.human_display %></td>
+    <td><%=  phone_number_carrier_link(phone_number)  %></td>
+    <td><%=h phone_number.country_code %></td>
+    <td><%=h phone_number.do_not_send %></td>
+    <td><%=h phone_number.white_list? %></td>
+    <td><%= link_to 'Show', sms_phone_number_path(:id => phone_number)%></td>
+    <td><%= link_to 'Edit', edit_sms_phone_number_path(phone_number) %></td>
+    <td><%= link_to 'Destroy', sms_phone_number_path(:id => phone_number), :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New phone number', new_sms_phone_number_path %>

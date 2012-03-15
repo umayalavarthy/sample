@@ -1,0 +1,36 @@
+
+
+<p>
+  <b>Name:</b>
+  <%= @admission.name %>
+</p>
+
+<p>
+  <b>Parent Name:</b>
+  <%= @admission.parentname %>
+</p>
+
+<p>
+  <b>Date of Birth:</b>
+  <%= @admission.dob %>
+</p>
+
+<p>
+  <b>E Mail:</b>
+  <%= @admission.email %>
+</p>
+<p>
+  <b>Address:</b>
+  <%= @admission.address %>
+</p>
+<p>
+  <b>Phone Number:</b>
+  <%= @admission.phno %>
+</p>
+<p>
+  <b>Fee Paid?:</b>
+  <%= @admission.feepaid %>
+</p>
+
+<%= link_to 'Edit', edit_admission_path %>
+<%= link_to 'Back', :controller=>'admissions', :action=>'home' %>
